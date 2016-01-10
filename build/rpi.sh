@@ -36,8 +36,9 @@ PARTITION
 
 losetup -d $DEVICE
 DEVICE=`kpartx -va ${IMAGE_PATH} | sed -E 's/.*(loop[0-9])p.*/\1/g' | head -1`
+dmsetup --noudevsync mknodes
 BOOTP="/dev/mapper/${DEVICE}p1"
-rootp="/dev/mapper/${DEVICE}p2"
+ROOTP="/dev/mapper/${DEVICE}p2"
 DEVICE="/dev/${DEVICE}"
 
 # Give some time to system to refresh
@@ -54,4 +55,4 @@ kpartx -vds ${IMAGE_PATH} || true
 umask 0000
 
 # compress image
-pigz --zip -c "${IMAGE_NAME}" > "${BUILD_RESULT_PATH}/${IMAGE_NAME}.zip"
+pigz --zip -c "${IMAGE_PATH}" > "${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip"
