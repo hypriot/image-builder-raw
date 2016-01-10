@@ -1,15 +1,15 @@
 sudo: required
 services:
-  - docker
+- docker
 language: bash
 script:
-  - make rpi
-deploy:
+- make rpi
+deploy_old:
   provider: releases
   api_key:
-    secure: ldMoo+75b7ql+d/QcrICL9EpmqSt18Gtlb0Qfwb+xwxBcBmmnM7UpeOeU4K6KnPZ8fAOyfcm4XQLwJF40EUjspov8X7CY8gOxWHMRp6mAebUgbk3toZSjxxRy1BAd7bewG+dcv4ZuDU0802A6LG5dCBcrgZg9q4JhMYBOUzbR7+p7LNm4ZMMpNlV8MpCsZCg5A+rLJ8IxoCamQW2r/IwcMY+/aWjlvBN8FHD7HN4p5hD1qclB9tg5id+Ar2tlXPpVKE+xT4eoAGtFJV56JQ8zQ3dGst4lb3tMWUWAxUjmh2YNrf5yHMoaEV8NkcKP16HaYDdWSThhohf6D+7mDmxB1tYRlpMr0W5gLtDVZP+OEdGYS7cmwpl76dPO8LNtPkbh+k59QRofrxn41UdGKKovZiry3lPzaYnW54OTLJohYSIEo3W5c17XgNkRFSO40B1dhrwmLupk+UQcPIl6MQ4uorG1Wh5RpRnaEA6Z2kP3/E+WusqjH3+e8/Sr4S34hSHVpGq4rkUUDVskEGJ510uEiLEC26oKAXdTOClfQhOtf4rlOoIXkMZUMBDkT3xU6uOwEboqHNhwCTHOXOVG8mmr7VddeE7wJxJsnGDfJRbqO0Dm1K6f9mnavuFXQc5GnrXmBIvw4JlISnBf6124h36stUe3hqCqkNPZCZWQi2C2Zk=
+    secure: r+RxXEasgwVp68gvD//Lm4aouLS+uz0ArTZfLhPfbHWgYlKbPgUna/3KraMcIKGYV3Q0OyCXP7UWcEQYb2boFtYvGo5UHMPSyyQChM2FfhcMl6V9ugVZpsEMx0s+TYL9se8JJaUrDECoBYbudhcDzmATqVcqkzW+us6bvh9x/nX8o+gOgb+Sk+av++3ZwNNqQx44ML3hQY7jPQfaDRPkmme3vnZs9RQlTijqobFKkC/Ebo+WJBmQU/bIUhgHanpXqCR2hmJySCNzZ/wB2NgHVpUAsSFZmebIY2z13xMfS0hKgBdhJ5jfRIAHoWMC40Fiyrq/PcfOnZ13lXVKvqC94YG+NIhzbiEsthEFmcvvjTYnpr3f/vykWh2YpFiCuGhc9nDePYhylu4k+zwVmC2sr78sjupjTFJ/rFfUamZfDJ7Po/0av+2MPnLkFOiX7rcRmDcxT8prpBTxuti+ByotRefY0bqn0L9dJVsBjNZVN5+Ce/Cpd5U9ZQrgthf5WAm0TerCvesmvY4r6Hu4hFg+n3VhVvAlrdUwR1SjrqMavSSDi36O1gO8QfWwSmydAgn/tSbb7UbNBvX3yNt1s73NNn6Qd72WHQpB5zE8ZF7G7swpLESD+2HjWPLefEGZHQNh8NAVrLpD2HDkmvtRcPOB5oz/UfkRyTuduP1KIcY4sp4=
   file:
-    - rpi-raw.img.zip
+  - rpi-raw.img.zip
   on:
     tags: true
     repo: hypriot/image-builder-raw
