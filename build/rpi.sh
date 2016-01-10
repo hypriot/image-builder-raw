@@ -55,4 +55,4 @@ kpartx -vds ${IMAGE_PATH} || true
 umask 0000
 
 # compress image
-pigz --zip -c "${IMAGE_PATH}" > "${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip"
+zip ${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip ${IMAGE_PATH}
