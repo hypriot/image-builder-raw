@@ -3,7 +3,7 @@ services:
 - docker
 language: bash
 script:
-- make rpi
+- make rpi-raw-image
 deploy_old:
   provider: releases
   api_key:
