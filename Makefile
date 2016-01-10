@@ -9,3 +9,7 @@ rpi-raw-image: build
 
 shell: build
 	docker run -ti --privileged -v $(shell pwd):/workspace image-builder-raw bash
+
+tag:
+	git tag ${TAG}
+	git push origin ${TAG}
