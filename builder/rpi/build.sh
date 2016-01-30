@@ -1,5 +1,5 @@
-#!/bin/bash -e
-set -x
+#!/bin/bash
+set -ex
 # This script should be run only inside of a Docker container
 if [ ! -f /.dockerinit ]; then
   echo "ERROR: script works only in a Docker container!"
@@ -56,3 +56,7 @@ umask 0000
 
 # compress image
 zip ${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip ${IMAGE_PATH}
+
+fdisk -l /rpi-raw.img
+# test raw image that we have built
+rspec --format documentation --color ${BUILD_RESULT_PATH}/builder/rpi/test
