@@ -1,12 +1,10 @@
 FROM debian:jessie
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    build-essential \
-    kpartx \
-    zip \
-    ruby \
-    ruby-dev \
     dosfstools \
+    kpartx \
+    ruby \
+    zip \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
