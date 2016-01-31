@@ -24,5 +24,13 @@ describe "Raw Image" do
     it "has a root-partition with a sda2 Linux filesystem" do
       expect(stdout).to contain('^.*\.img2 .*Linux$')
     end
+
+    it "partition sda1 starts at sector 2048" do
+      expect(stdout).to contain('^.*\.img1\ *2048 .*$')
+    end
+
+    it "partition sda1 has a size of 64M" do
+      expect(stdout).to contain('^.*\.img1.* 64M  c.*$')
+    end
   end
 end
