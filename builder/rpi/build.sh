@@ -20,10 +20,10 @@ BOOT_PARTITION_SIZE="64"
 BOOTFS_START=2048
 BOOTFS_SIZE=$(expr ${BOOT_PARTITION_SIZE} \* 2048)
 ROOTFS_START=$(expr ${BOOTFS_SIZE} + ${BOOTFS_START})
-SD_MINUS_DD=$(expr ${SD_CARD_SIZE} \* 1000000 - 256)
+SD_MINUS_DD=$(expr ${SD_CARD_SIZE} \* 1024 \* 1024 - 256)
 ROOTFS_SIZE=$(expr ${SD_MINUS_DD} / 512 - ${ROOTFS_START})
 
-dd if=/dev/zero of=${IMAGE_PATH} bs=1MB count=${SD_CARD_SIZE}
+dd if=/dev/zero of=${IMAGE_PATH} bs=1MiB count=${SD_CARD_SIZE}
 
 DEVICE=$(losetup -f --show ${IMAGE_PATH})
 
