@@ -12,13 +12,18 @@ IMAGE_PATH="rpi-raw.img"
 SD_CARD_SIZE="1500"
 BOOT_PARTITION_SIZE="64"
 
+# Create empty BOOT/ROOTFS image file
+# - SD_CARD_SIZE in MByte
+# - DD uses 256 Bytes
+# - sector block size is 512Bytes
+# - MBR size is 512 Bytes, so we start at sector 2048 (1MByte reserved space)
 BOOTFS_START=2048
 BOOTFS_SIZE=$(expr ${BOOT_PARTITION_SIZE} \* 2048)
 ROOTFS_START=$(expr ${BOOTFS_SIZE} + ${BOOTFS_START})
-SD_MINUS_DD=$(expr ${SD_CARD_SIZE} - 256)  # old config: 1280 - 256 = 1024 for rootfs
-ROOTFS_SIZE=$(expr ${SD_MINUS_DD} \* 1000000 / 512 - ${ROOTFS_START})
+SD_MINUS_DD=$(expr ${SD_CARD_SIZE} \* 1024 \* 1024 - 256)
+ROOTFS_SIZE=$(expr ${SD_MINUS_DD} / 512 - ${ROOTFS_START})
 
-dd if=/dev/zero of=${IMAGE_PATH} bs=1MB count=${SD_CARD_SIZE}
+dd if=/dev/zero of=${IMAGE_PATH} bs=1MiB count=${SD_CARD_SIZE}
 
 DEVICE=$(losetup -f --show ${IMAGE_PATH})
 

@@ -1,4 +1,3 @@
-.PHONY: build
 default: build
 
 build:
@@ -8,7 +7,10 @@ rpi-raw-image: build
 	docker run --rm --privileged -v $(shell pwd):/workspace image-builder-raw /workspace/builder/rpi/build.sh
 
 shell: build
-	docker run -ti --privileged -v $(shell pwd):/workspace image-builder-raw bash
+	docker run --rm -ti --privileged -v $(shell pwd):/workspace image-builder-raw bash
+
+testshell: build
+	docker run --rm -ti --privileged -v $(shell pwd)/builder:/builder -v $(shell pwd):/workspace image-builder-raw bash
 
 tag:
 	git tag ${TAG}
