@@ -4,6 +4,9 @@ services:
 language: bash
 script:
 - make rpi-raw-image
+branches:
+  only:
+    - master
 deploy:
   provider: releases
   api_key:
