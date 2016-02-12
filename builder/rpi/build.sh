@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
-# This script should be run only inside of a Docker container
+# this script should be run only inside of a Docker container
 if [ ! -f /.dockerinit ]; then
   echo "ERROR: script works only in a Docker container!"
   exit 1
@@ -12,7 +12,7 @@ IMAGE_PATH="rpi-raw.img"
 SD_CARD_SIZE="1200"
 BOOT_PARTITION_SIZE="64"
 
-# Create empty BOOT/ROOTFS image file
+# create empty BOOT/ROOTFS image file
 # - SD_CARD_SIZE in MByte
 # - DD uses 256 Bytes
 # - sector block size is 512Bytes
@@ -29,7 +29,7 @@ DEVICE=$(losetup -f --show ${IMAGE_PATH})
 
 echo "Image ${IMAGE_PATH} created and mounted as ${DEVICE}."
 
-# Create partions
+# create partions
 sfdisk --force ${DEVICE} <<PARTITION
 unit: sectors
 
@@ -46,7 +46,7 @@ BOOTP="/dev/mapper/${DEVICE}p1"
 ROOTP="/dev/mapper/${DEVICE}p2"
 DEVICE="/dev/${DEVICE}"
 
-# Give some time to system to refresh
+# give some time to system to refresh
 sleep 3
 
 # create file systems
