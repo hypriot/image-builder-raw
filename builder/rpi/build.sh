@@ -60,8 +60,8 @@ kpartx -vds ${IMAGE_PATH} || true
 umask 0000
 
 # compress image
-zip ${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip ${IMAGE_PATH}
-cd ${BUILD_RESULT_PATH} && sha256sum ${IMAGE_PATH}.zip > ${IMAGE_PATH}.zip.sha256 && cd -
+zip "${BUILD_RESULT_PATH}/${IMAGE_PATH}.zip" "${IMAGE_PATH}"
+cd ${BUILD_RESULT_PATH} && "sha256sum ${IMAGE_PATH}.zip" > "${IMAGE_PATH}.zip.sha256" && cd -
 
 fdisk -l /rpi-raw.img
 # test raw image that we have built
