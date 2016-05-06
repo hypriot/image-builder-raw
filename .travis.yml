@@ -1,9 +1,10 @@
 sudo: required
 services:
-- docker
+  - docker
 language: bash
 script:
-- make rpi-raw-image
+  - make rpi-raw-image
+  - ls -lah
 branches:
   only:
     - master
