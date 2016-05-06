@@ -13,8 +13,8 @@ deploy:
   api_key:
     secure: r+RxXEasgwVp68gvD//Lm4aouLS+uz0ArTZfLhPfbHWgYlKbPgUna/3KraMcIKGYV3Q0OyCXP7UWcEQYb2boFtYvGo5UHMPSyyQChM2FfhcMl6V9ugVZpsEMx0s+TYL9se8JJaUrDECoBYbudhcDzmATqVcqkzW+us6bvh9x/nX8o+gOgb+Sk+av++3ZwNNqQx44ML3hQY7jPQfaDRPkmme3vnZs9RQlTijqobFKkC/Ebo+WJBmQU/bIUhgHanpXqCR2hmJySCNzZ/wB2NgHVpUAsSFZmebIY2z13xMfS0hKgBdhJ5jfRIAHoWMC40Fiyrq/PcfOnZ13lXVKvqC94YG+NIhzbiEsthEFmcvvjTYnpr3f/vykWh2YpFiCuGhc9nDePYhylu4k+zwVmC2sr78sjupjTFJ/rFfUamZfDJ7Po/0av+2MPnLkFOiX7rcRmDcxT8prpBTxuti+ByotRefY0bqn0L9dJVsBjNZVN5+Ce/Cpd5U9ZQrgthf5WAm0TerCvesmvY4r6Hu4hFg+n3VhVvAlrdUwR1SjrqMavSSDi36O1gO8QfWwSmydAgn/tSbb7UbNBvX3yNt1s73NNn6Qd72WHQpB5zE8ZF7G7swpLESD+2HjWPLefEGZHQNh8NAVrLpD2HDkmvtRcPOB5oz/UfkRyTuduP1KIcY4sp4=
   file:
-    - rpi-raw.img.zip
-    - rpi-raw.img.zip.sha256
+    - "rpi-raw.img.zip"
+    - "rpi-raw.img.zip.sha256"
   on:
     tags: true
     repo: hypriot/image-builder-raw
