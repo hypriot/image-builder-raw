@@ -8,6 +8,7 @@ These images have the necessary partitions, sizes and filesystem - but not actua
 Currently there is the following image:
 
 * `rpi-raw-image` with two partitions (FAT + EXT4) for the Raspberry Pi
+* `odroid-raw-image` with two partitions (FAT + EXT4) for ODROID (eg. XU4)
 
 ## Contributing
 
@@ -17,6 +18,7 @@ You can build the root filesystem locally with Docker.
 
 ```bash
 make rpi-raw-image
+make odroid-raw-image
 ```
 
 
