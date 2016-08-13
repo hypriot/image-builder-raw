@@ -9,7 +9,7 @@ fi
 ### setting up some important variables to control the build process
 BUILD_RESULT_PATH="/workspace"
 IMAGE_PATH="rpi-raw.img"
-SD_CARD_SIZE=1300
+SD_CARD_SIZE=1000
 BOOT_PARTITION_SIZE=64
 
 # create empty BOOT/ROOTFS image file
