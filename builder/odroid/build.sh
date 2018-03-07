@@ -66,4 +66,4 @@ cd ${BUILD_RESULT_PATH} && sha256sum "${IMAGE_PATH}.zip" > "${IMAGE_PATH}.zip.sh
 
 fdisk -l /odroid-raw.img
 # test raw image that we have built
-rspec --format documentation --color ${BUILD_RESULT_PATH}/builder/odroid/test
+rspec --format documentation --color /builder/odroid/test

@@ -10,3 +10,5 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 RUN gem update --system && \
     gem install --no-document serverspec
+
+COPY builder /builder/
