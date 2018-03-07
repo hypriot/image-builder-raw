@@ -66,4 +66,4 @@ cd ${BUILD_RESULT_PATH} && sha256sum "${IMAGE_PATH}.zip" > "${IMAGE_PATH}.zip.sh
 
 fdisk -l /rpi-raw.img
 # test raw image that we have built
-rspec --format documentation --color ${BUILD_RESULT_PATH}/builder/rpi/test
+rspec --format documentation --color /builder/rpi/test
