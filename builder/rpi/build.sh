@@ -33,7 +33,7 @@ echo "Image ${IMAGE_PATH} created and mounted as ${DEVICE}."
 sfdisk --force "${DEVICE}" <<PARTITION
 unit: sectors
 
-/dev/loop0p1 : start= ${BOOTFS_START}, size= ${BOOTFS_SIZE}, Id= c
+/dev/loop0p1 : start= ${BOOTFS_START}, size= ${BOOTFS_SIZE}, Id= c, bootable
 /dev/loop0p2 : start= ${ROOTFS_START}, size= ${ROOTFS_SIZE}, Id=83
 /dev/loop0p3 : start= 0, size= 0, Id= 0
 /dev/loop0p4 : start= 0, size= 0, Id= 0
