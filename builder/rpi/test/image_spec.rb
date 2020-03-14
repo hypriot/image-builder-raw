@@ -29,8 +29,8 @@ describe "Raw Image" do
       expect(stdout).to contain('^.*\.img1\ *2048 .*$')
     end
 
-    it "partition sda1 has a size of 64M" do
-      expect(stdout).to contain('^.*\.img1.* 64M  c.*$')
+    it "partition sda1 has a size of 100M" do
+      expect(stdout).to contain('^.*\.img1.* 100M  c.*$')
     end
   end
 end
