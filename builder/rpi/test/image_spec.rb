@@ -18,7 +18,7 @@ describe "Raw Image" do
     end
 
     it "has a boot-partition with a sda1 W95 FAT32 filesystem" do
-      expect(stdout).to contain('^.*\.img1 .*W95 FAT32 \(LBA\)$')
+      expect(stdout).to contain('^.*\.img1 \* .*W95 FAT32 \(LBA\)$')
     end
 
     it "has a root-partition with a sda2 Linux filesystem" do
@@ -26,7 +26,7 @@ describe "Raw Image" do
     end
 
     it "partition sda1 starts at sector 2048" do
-      expect(stdout).to contain('^.*\.img1\ *2048 .*$')
+      expect(stdout).to contain('^.*\.img1\ \* *2048 .*$')
     end
 
     it "partition sda1 has a size of 100M" do
